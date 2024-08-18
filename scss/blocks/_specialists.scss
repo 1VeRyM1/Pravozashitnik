@@ -1,0 +1,234 @@
+.specialists {
+    min-height: 740px;
+    padding: 80px 0;
+    background-color: #F7F7F7;
+    &__title {
+        position: relative;
+        margin-bottom: 37px;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -13px;
+            width: 50px;
+            height: 3px;
+            background-color: $main-color;
+        }
+    }
+    &__subtitle {
+        margin: 0 auto;
+        max-width: 920px;
+        margin-bottom: 48px;
+    }
+    &__wrapper {
+        width: 1320px;
+    }
+    &__card {
+        max-width: 312px;
+        min-height: 414px;
+        position: relative;
+        background-color: #fff;
+        cursor: pointer;
+        &:hover .specialists__img {
+            opacity: 0;
+        }
+        &:hover .specialists__prev-content {
+            opacity: 0;
+        }
+        &:hover .specialists__corner-one {
+            top: 20px;
+            left: 20px;
+        }
+        &:hover .specialists__corner-two {
+            top: 20px;
+            right: 20px;
+        }
+        &:hover .specialists__corner-three {
+            bottom: 20px;
+            right: 20px;
+        }
+        &:hover .specialists__corner-four {
+            bottom: 20px;
+            left: 20px;
+        }
+    }
+    &__img {
+        position: absolute;
+        z-index: 5;
+        width: 312px;
+        height: 320px;
+        transition: all 0.5s;
+        img {
+            width: 100%;
+        }
+    }
+    &__prev-content {
+        position: absolute;
+        z-index: 5;
+        min-height: 94px;
+        width: 100%;
+        bottom: 0;
+        padding-top: 24px;
+        text-align: center;
+        transition: all 0.5s;
+        background-color: #fff;
+    }
+    &__name {
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+        color: $second-color;
+        margin-bottom: 10px;
+    }
+    &__prof {
+        font-size: 14px;
+        font-weight: 300;
+        text-align: center;
+        color: $second-color;
+    }
+    &__main-content {
+        min-height: 414px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        text-align: center;
+    }
+    &__corner-one {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 25px;
+        height: 25px;
+        border-top: 1px solid $main-color;
+        border-left: 1px solid $main-color;
+        transition: all 0.5s;
+    }
+    &__corner-two {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 25px;
+        height: 25px;
+        border-top: 1px solid $main-color;
+        border-right: 1px solid $main-color;
+        transition: all 0.5s;
+    }
+    &__corner-three {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 25px;
+        height: 25px;
+        border-right: 1px solid $main-color;
+        border-bottom: 1px solid $main-color;
+        transition: all 0.5s;
+    }
+    &__corner-four {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 25px;
+        height: 25px;
+        border-bottom: 1px solid $main-color;
+        border-left: 1px solid $main-color;
+        transition: all 0.5s;
+    }
+    &__main-name {
+        font-size: 16px;
+        font-weight: 700;
+        text-align: center;
+        color: $second-color;
+        margin-bottom: 10px;
+    }
+    &__main-prof {
+        font-size: 14px;
+        font-weight: 300;
+        text-align: center;
+        color: $second-color;
+        margin-bottom: 40px;
+    }
+    &__main-descr {
+        display: flex;
+        max-width: 265px;
+        margin: 0 auto;
+        font-size: 14px;
+        font-weight: 300;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 40px;
+    }
+    &__main-working {
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+        color: $second-color;
+    }
+}
+
+@media (max-width: 991px) {
+    .specialists {
+        min-height: 690px;
+        padding: 60px 0;
+        &__card {
+            max-width: 300px;
+            min-height: 414px;
+        }
+        &__img {
+            width: 300px;
+            height: 320px;
+            img {
+                height: 320px;
+            }
+        }
+    }
+}
+
+@media (max-width: 543px) {
+    .specialists {
+        min-height: 600px;
+        padding: 40px 0;
+        &__title {
+            margin-bottom: 29px;
+        }
+        &__subtitle {
+            margin-bottom: 24px;
+        }
+        &__card {
+            max-width: 250px;
+            min-height: 348px;
+        }
+        &__img {
+            width: 250px;
+            height: 235px;
+            img {
+                height: 235px;
+            }
+        }
+        &__prev-content {
+            min-height: 113px;
+            padding: 24px 16px 0;
+        }
+        &__main-content {
+            min-height: 348px;
+            padding: 0 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            text-align: center;
+        }
+        &__main-name {
+            margin-bottom: 8px;
+        }
+        &__main-prof {
+            margin-bottom: 15px;
+        }
+        &__main-descr {
+            margin-bottom: 15px;
+        }
+    }
+}

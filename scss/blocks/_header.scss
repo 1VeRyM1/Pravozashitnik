@@ -1,0 +1,256 @@
+.header {
+    position: absolute;
+    z-index: 5;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 162px;
+    background: linear-gradient(180deg, #010101 52px, rgba(1, 1, 1, 0.75) 52px 110px);
+    &__top {
+        display: flex;
+        min-height: 50px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__contacts {
+        display: flex;
+    }
+
+    &__contact-item {
+        display: flex;
+        align-items: center;
+        margin-right: 24px;
+    }
+
+    &__contact-img {
+        width: 20px;
+        height: 20px;
+        margin-right: 8px;
+    }
+
+    &__contact-ico {
+        width: 20px;
+        height: 20px;
+    }
+
+    &__contact-text {
+        a {
+            font-size: 14px;
+            font-weight: 600;
+            text-align: left;
+            color: #FFFFFF;
+        }
+    }
+
+    &__contact-link {
+        font-size: 14px;
+        font-weight: 700;
+        text-align: left;
+        color: #FFFFFF;
+    }
+
+    &__bottom {
+        min-height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    &__logo-main {
+        font-size: 28px;
+        font-weight: 900;
+        text-align: left;
+        text-transform: uppercase;
+        color: $main-color;
+    }
+
+    &__logo-sub {
+        font-size: 20px;
+        font-weight: 900;
+        text-align: left;
+        text-transform: lowercase;
+        color: #ffffff;
+        margin-top: -7px;
+    }
+    &__burger {
+        display: none;
+        position: relative;
+        justify-content: end;
+        align-items: center;
+        width: 18px;
+        height: 16px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 18px;
+            height: 2px;
+            background-color: #fff;
+        }
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 18px;
+            height: 2px;
+            background-color: #fff;
+        }
+        &:hover .header__burger-line {
+            width: 18px;
+        }
+    }
+    &__burger-line {
+        display: block;
+        width: 12px;
+        height: 2px;
+        background-color: #fff;
+        transition: all 0.2s;
+    }
+}
+.navigation {
+
+    &__menu {
+        display: flex;
+        list-style-type: none;
+    }
+
+    &__element {
+        margin-right: 32px;
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+
+    &__link {
+        font-size: 18px;
+        font-weight: 700;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    &__close {
+        display: none;
+        width: 24px;
+        height: 24px;
+        position: absolute;
+        top: 24px;
+        right: 32px;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+        transition: all 0.3s;
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 18px;
+            height: 2px;
+            background-color: #fff;
+            transform: translate(-50%) rotate(45deg);
+        }
+        &::before {
+            content: "";
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 18px;
+            height: 2px;
+            background-color: #fff;
+            transform: translate(-50%) rotate(-45deg);
+        }
+        &:hover {
+            transform: rotate(90deg) scale(1.2);
+        }
+    }
+}
+
+@media (max-width: 1400px) {
+    .header {
+        &__logo-main {
+            font-size: 26px;
+        }
+
+        &__logo-sub {
+            font-size: 18px;
+        }
+    }
+    .navigation {
+        &__element {
+            margin-right: 16px;
+        }
+    }
+}
+@media (max-width: 991px) {
+    .header {
+        min-height: 134px;
+        &__logo-main {
+            font-size: 22px;
+        }
+        &__logo-sub {
+            font-size: 16px;
+        }
+        &__bottom {
+            min-height: 84px;
+        }
+        &__burger {
+            display: flex;
+        }
+    }
+    .navigation {
+        display: block;
+        position: fixed;
+        z-index: 5;
+        top: 0;
+        left: -100%;
+        width: 100vw;
+        height: 100vh;
+        padding: 50px 0 0 69px;
+        background-color: $second-color;
+        transition: all 0.3s;
+        &__menu {
+            flex-direction: column;
+            gap: 24px;
+        }
+        &__close {
+            display: block;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .header {
+        &__contact-item {
+            &:last-child {
+                display: none;
+            }
+        }
+    }
+    .navigation {
+        padding: 50px 0 0 24px;
+    }
+}
+
+@media (max-width: 543px) {
+    .header {
+        &__logo-main {
+            font-size: 22px;
+        }
+        &__logo-sub {
+            font-size: 16px;
+        }
+        &__contact-img {
+            display: none;
+        }
+    }
+}

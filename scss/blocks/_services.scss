@@ -1,0 +1,214 @@
+.services {
+    min-height: 960px;
+    padding: 80px 0;
+    background-color: #F7F7F7;
+    &__container {
+        text-align: center;
+    }
+
+    &__title {
+        position: relative;
+        margin-bottom: 37px;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -13px;
+            width: 50px;
+            height: 3px;
+            background-color: $main-color;
+        }
+    }
+
+    &__subtitle {
+        max-width: 920px;
+        margin: 0 auto;
+        margin-bottom: 48px;
+    }
+    
+    &__swiper {
+        display: none;
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 38px;
+        margin-bottom: 48px;
+    }
+
+    &__card {
+        position: relative;
+        min-height: 250px;
+        max-width: 424px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 50px 32px 59px;
+        background-color: #ffffff;
+        transition: all 0.5s;
+        cursor: pointer;
+        &:hover {
+            background-color: $main-color;
+        }
+        &:hover .services__ico {
+            fill: #fff;
+        }
+        &:hover .services__minititle {
+            color: #fff;
+        }
+        &:hover .services__descr {
+            color: #fff;
+        }
+        &:hover .services__corner-one {
+            top: 20px;
+            left: 20px;
+            opacity: 1;
+        }
+        &:hover .services__corner-two {
+            top: 20px;
+            right: 20px;
+            opacity: 1;
+        }
+        &:hover .services__corner-three {
+            bottom: 20px;
+            right: 20px;
+            opacity: 1;
+        }
+        &:hover .services__corner-four {
+            bottom: 20px;
+            left: 20px;
+            opacity: 1;
+        }
+    }
+
+    &__corner-one {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        border-top: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    &__corner-two {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        border-top: 1px solid #ffffff;
+        border-right: 1px solid #ffffff;
+        top: 0;
+        right: 0;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    &__corner-three {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        border-right: 1px solid #ffffff;
+        border-bottom: 1px solid #ffffff;
+        bottom: 0;
+        right: 0;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+    &__corner-four {
+        position: absolute;
+        width: 35px;
+        height: 35px;
+        border-bottom: 1px solid #ffffff;
+        border-left: 1px solid #ffffff;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        transition: all 0.3s;
+    }
+
+    &__img {
+        width: 35px;
+        height: 35px;
+        margin-bottom: 15px;
+    }
+
+    &__ico {
+        fill: $main-color;
+        width: 35px;
+        height: 35px;
+        transition: all 0.5s;
+    }
+
+    &__minititle {
+        font-size: 20px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        text-align: center;
+        color: $second-color;
+        transition: all 0.5s;
+    }
+
+    &__descr {
+        font-size: 14px;
+        font-weight: 400;
+        text-align: center;
+        color: $second-color;
+        transition: all 0.5s;
+    }
+}
+@media (max-width: 991px) {
+    .services {
+        padding: 60px 0;
+        &__wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 48px;
+        }
+        &__card { 
+            min-height: 229px;
+            padding: 30px 32px 32px;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .services {
+        &__card { 
+            min-height: 229px;
+            padding: 24px 16px 32px;
+        }
+    }
+}
+
+@media (max-width: 543px) {
+    .services {
+        min-height: 542px;
+        padding: 40px 0;
+        &__main {
+            display: none;
+        }
+        &__wrapper {
+            display: flex;
+            gap: 0;
+            margin-bottom: 30px;
+        }
+        &__swiper {
+            display: block;
+        }
+        &__title {
+            margin-bottom: 29px;
+        }
+        &__subtitle {
+            margin-bottom: 24px;
+        }
+        &__card { 
+            max-width: 250px;
+            min-height: 229px;
+            padding: 24px 16px 32px;
+            margin-right: 24px;
+        }
+    }
+}
